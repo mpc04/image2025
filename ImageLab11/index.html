@@ -5,18 +5,40 @@
   </head>
   <body>
     <a-scene>
+      
       <a-assets>
-
-      <a-assets-item id="myModel" src="assets/metal_table.obj" color></a-assets-item>
-
+        <img id="room" src="assets/conference table.jpg" alt="">
+        <a-asset-item id="phone" src="assets/phone.obj"></a-asset-item>
+        <a-asset-item id="phone-mtl" src="assets/phone.mtl"></a-asset-item>
+        <img id="phone-color" src="assets/Phone albedo.jpg" alt="">
+        <img id="phone-texture" src="assets/Phone roughness.jpg" alt="">
+        <a-asset-item id="ruler" src="assets/ruler.obj"></a-asset-item>
+        <a-asset-item id="ruler-mtl" src="assets/ruler.mtl"></a-asset-item>
+        <img id="ruler-texture" src="assets/ruler texture.png" alt="">
+        <img id="poster" src="assets/poster.png" alt="Praise Kier">
       </a-assets>
-           <a-obj-model src="#myModel" color="grey"></a-obj-model>
+      
+      <a-sky src="#room"></a-sky>  
+      
+      <a-obj-model 
+          src="#phone" 
+          scale="10 10 10" 
+          position="0 0 0" 
+          rotation="0 -3 0" 
+          material="src: #phone-texture; normalMap: #phone-color">
+      </a-obj-model>
+
+      <a-obj-model
+          src="#ruler"
+          color="yellow"
+          scale="10 10 10"
+          position="5 0 0"
+          rotation="90 0 0"
+          material="src: #ruler-texture">
+        </a-obj-model>   
+
+        <a-plane src="#poster" position="-12 4 0" rotation="0 90 0" width="7" height="9"></a-plane>
  
-      <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
-      <!-- <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere> -->
-      <!-- <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
-      <!-- <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane> -->
-      <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>
 </html>
